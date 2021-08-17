@@ -17,33 +17,38 @@ class PluginLaunch implements Plugin<Project> {
     void apply(Project project) {
         Logger.make(project)
         Logger.i('Project enable nav-register plugin')
-        //apply plugin
-        if (!project.plugins.hasPlugin("kotlin-android")) {
-            project.plugins.apply("kotlin-android")
-        }
-        if (!project.plugins.hasPlugin("kotlin-kapt")) {
-            project.plugins.apply("kotlin-kapt")
-        }
-        //add dependencies
-        def apiVersion = '1.0.0'
-        project.dependencies.add('implementation', "zy.nav:nav:$apiVersion")
-        project.dependencies.add('androidTestImplementation', "zy.nav:test:$apiVersion")
-        project.dependencies.add('kapt', "zy.nav:compiler:$apiVersion")
-        //add kapt extension
         def isApp = project.plugins.hasPlugin(AppPlugin)
         def android = isApp
                 ? project.extensions.getByType(AppExtension)
                 : project.extensions.getByType(LibraryExtension)
-        def kapt = project.extensions.findByType(KaptExtension)
-        kapt.arguments(new Function1<KaptAnnotationProcessorOptions, Unit>() {
-            @Override
-            Unit invoke(KaptAnnotationProcessorOptions kaptAnnotationProcessorOptions) {
-                kaptAnnotationProcessorOptions.arg('MODULE_NAME', project.name)
-                kaptAnnotationProcessorOptions.arg('DOC_DIR',
-                        android.sourceSets.maybeCreate("main").assets.srcDirs[0])
-                return null
+        //add dependencies
+        def apiVersion = '1.0.0'
+        project.dependencies.add('implementation', "zy.nav:nav:$apiVersion")
+        project.dependencies.add('androidTestImplementation', "zy.nav:test:$apiVersion")
+        def isKotlin = project.plugins.hasPlugin("kotlin-android")
+        def docDir = android.sourceSets.maybeCreate("main").assets.srcDirs[0].absolutePath
+        if (!isKotlin) {
+            project.dependencies.add('annotationProcessor', "zy.nav:compiler:$apiVersion")
+            def annotationProcessorOptions = android.defaultConfig.javaCompileOptions.annotationProcessorOptions
+            annotationProcessorOptions.arguments([
+                    'MODULE_NAME': project.name,
+                    'DOC_DIR'    : docDir
+            ])
+        } else {
+            if (!project.plugins.hasPlugin("kotlin-kapt")) {
+                project.plugins.apply("kotlin-kapt")
             }
-        })
+            project.dependencies.add('kapt', "zy.nav:compiler:$apiVersion")
+            def kapt = project.extensions.findByType(KaptExtension)
+            kapt.arguments(new Function1<KaptAnnotationProcessorOptions, Unit>() {
+                @Override
+                Unit invoke(KaptAnnotationProcessorOptions kaptAnnotationProcessorOptions) {
+                    kaptAnnotationProcessorOptions.arg('MODULE_NAME', project.name)
+                    kaptAnnotationProcessorOptions.arg('DOC_DIR', docDir)
+                    return null
+                }
+            })
+        }
         //asm code
         if (isApp) {
             def transformImpl = new RegisterTransform(project)

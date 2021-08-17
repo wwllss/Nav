@@ -47,7 +47,7 @@ public abstract class BaseProcessor extends AbstractProcessor {
             originalModuleName = options.get(KEY_MODULE_NAME);
             docDir = options.get(KEY_DOC_DIR);
         }
-        if (!Utils.isEmpty(originalModuleName)) {
+        if (!Utils.isEmpty(originalModuleName) && !Utils.isEmpty(docDir)) {
             moduleName = originalModuleName.replaceAll("[^0-9a-zA-Z_]+", "");
             logger.i("config MODULE_NAME is ---> " + moduleName);
             logger.i("config DOC_DIR is ---> " + docDir);
