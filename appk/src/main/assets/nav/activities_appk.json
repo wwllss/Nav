@@ -1,0 +1,10 @@
+[
+  {
+    "route": "/app/k/jink",
+    "className": "zy.example.appk.JinKActivity"
+  },
+  {
+    "route": "/app/k/main",
+    "className": "zy.example.appk.AppKMainActivity"
+  }
+]

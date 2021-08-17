@@ -1,0 +1,28 @@
+[
+  {
+    "route": "/appa/module",
+    "argList": [
+      {
+        "paramName": "str",
+        "fieldName": "moduleAppName"
+      }
+    ]
+  },
+  {
+    "route": "/app/a/main",
+    "argList": [
+      {
+        "paramName": "str",
+        "fieldName": "moduleAppName"
+      }
+    ]
+  },
+  {
+    "route": "/app/a/fragment/main",
+    "argList": [
+      {
+        "paramName": "msgList"
+      }
+    ]
+  }
+]

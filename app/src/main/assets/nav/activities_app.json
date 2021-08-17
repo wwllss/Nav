@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/app/main",
+    "className": "zy.nav.example.MainActivity"
+  },
+  {
+    "route": "/app/forResult",
+    "className": "zy.nav.example.ForResultActivity"
+  },
+  {
+    "route": "/secondAct",
+    "className": "zy.nav.example.SecondActivity"
+  }
+]

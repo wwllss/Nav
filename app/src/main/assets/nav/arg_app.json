@@ -1,0 +1,56 @@
+[
+  {
+    "route": "/app/main",
+    "argList": [
+      {
+        "paramName": "firstArg"
+      },
+      {
+        "paramName": "testInjectObj",
+        "fieldName": "object"
+      },
+      {
+        "paramName": "nameList"
+      },
+      {
+        "paramName": "cache"
+      }
+    ]
+  },
+  {
+    "route": "/firstFragment",
+    "argList": [
+      {
+        "paramName": "firstFragName"
+      },
+      {
+        "paramName": "obj",
+        "fieldName": "firstFragObj"
+      },
+      {
+        "paramName": "firstFragList"
+      },
+      {
+        "paramName": "firstFragMap"
+      }
+    ]
+  },
+  {
+    "route": "/secondAct",
+    "argList": [
+      {
+        "paramName": "firstArg"
+      },
+      {
+        "paramName": "testInjectObj",
+        "fieldName": "object"
+      },
+      {
+        "paramName": "nameList"
+      },
+      {
+        "paramName": "cache"
+      }
+    ]
+  }
+]

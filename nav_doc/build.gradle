@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+uploadArchives {
+
+    task sourceJar(type: Jar) {
+        archiveClassifier.set("sources")
+        from sourceSets.main.java.srcDirs
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///${project.rootDir}/maven")
+            pom.groupId = 'zy.nav' // 组名
+            pom.artifactId = 'doc' // 插件名
+            pom.version = "$apiVersion" // 版本号
+        }
+    }
+}

@@ -1,0 +1,40 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.squareup:javapoet:1.13.0'
+    //noinspection AnnotationProcessorOnCompilePath
+    implementation 'com.google.auto.service:auto-service:1.0-rc5'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc5'
+    implementation "zy.nav:annotation:$apiVersion"
+//    implementation project(":nav_annotation")
+    implementation "zy.nav:doc:$apiVersion"
+//    implementation project(":nav_doc")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+uploadArchives {
+
+    task sourceJar(type: Jar) {
+        archiveClassifier.set("sources")
+        from sourceSets.main.java.srcDirs
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///${project.rootDir}/maven")
+            pom.groupId = 'zy.nav' // 组名
+            pom.artifactId = 'compiler' // 插件名
+            pom.version = "$apiVersion" // 版本号
+        }
+    }
+}

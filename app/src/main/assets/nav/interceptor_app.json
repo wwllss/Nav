@@ -1,0 +1,10 @@
+[
+  {
+    "route": "/app/k/main",
+    "interceptor": "zy.nav.example.MainInterceptor"
+  },
+  {
+    "route": "",
+    "interceptor": "zy.nav.example.MainSimpleInterceptor"
+  }
+]

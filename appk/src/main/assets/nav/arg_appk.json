@@ -1,0 +1,23 @@
+[
+  {
+    "route": "/app/k/main",
+    "argList": [
+      {
+        "paramName": "kotlin_msg",
+        "fieldName": "msg"
+      },
+      {
+        "paramName": "anInt"
+      },
+      {
+        "paramName": "aChar"
+      },
+      {
+        "paramName": "aFloat"
+      },
+      {
+        "paramName": "aDouble"
+      }
+    ]
+  }
+]

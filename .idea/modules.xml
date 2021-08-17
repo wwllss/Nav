@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Nav.iml" filepath="$PROJECT_DIR$/.idea/modules/Nav.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Nav.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Nav.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.iml" filepath="$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appa/Nav.appa.iml" filepath="$PROJECT_DIR$/.idea/modules/appa/Nav.appa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appb/Nav.appb.iml" filepath="$PROJECT_DIR$/.idea/modules/appb/Nav.appb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appk/Nav.appk.iml" filepath="$PROJECT_DIR$/.idea/modules/appk/Nav.appk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/register/Nav.register.iml" filepath="$PROJECT_DIR$/.idea/modules/register/Nav.register.iml" />
+    </modules>
+  </component>
+</project>

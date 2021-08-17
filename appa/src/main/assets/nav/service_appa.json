@@ -1,0 +1,20 @@
+[
+  {
+    "service": "zy.nav.JsonMarshaller",
+    "implList": [
+      {
+        "token": "",
+        "implName": "zy.example.appa.GsonMarshaller"
+      }
+    ]
+  },
+  {
+    "service": "zy.example.app_service.AppAModuleService",
+    "implList": [
+      {
+        "token": "",
+        "implName": "zy.example.appa.AppAModuleServiceImpl"
+      }
+    ]
+  }
+]

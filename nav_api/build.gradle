@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
+    androidTestImplementation 'androidx.appcompat:appcompat:1.2.0'
+    androidTestImplementation 'com.google.code.gson:gson:2.8.6'
+
+    compileOnly 'androidx.appcompat:appcompat:1.2.0'
+    api "zy.nav:annotation:$apiVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+uploadArchives {
+
+    task sourceJar(type: Jar) {
+        archiveClassifier.set("sources")
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///${project.rootDir}/maven")
+            pom.groupId = 'zy.nav' // 组名
+            pom.artifactId = 'nav' // 插件名
+            pom.version = "$apiVersion" // 版本号
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,6 @@
+[
+  {
+    "route": "/app/a/fragment/main",
+    "className": "zy.example.appa.AppAFragment"
+  }
+]

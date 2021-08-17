@@ -1,0 +1,6 @@
+[
+  {
+    "route": "/app/b/main",
+    "className": "zy.example.appb.AppBMainActivity"
+  }
+]

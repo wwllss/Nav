@@ -1,0 +1,10 @@
+[
+  {
+    "route": "/appa/module",
+    "className": "zy.example.appa.AppAMainActivity"
+  },
+  {
+    "route": "/app/a/main",
+    "className": "zy.example.appa.AppAMainActivity"
+  }
+]

@@ -1,0 +1,15 @@
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+
+dependencies {
+    androidTestImplementation project(":nav_test")
+    implementation project(":nav_annotation")
+    implementation project(":nav_api")
+    kapt project(":nav_compiler")
+}
+
+kapt {
+    arguments {
+        arg("MODULE_NAME", project.name)
+    }
+}

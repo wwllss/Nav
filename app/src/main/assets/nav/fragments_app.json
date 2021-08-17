@@ -1,0 +1,6 @@
+[
+  {
+    "route": "/firstFragment",
+    "className": "zy.nav.example.FirstFragment"
+  }
+]

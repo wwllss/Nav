@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compileOnly gradleApi()
+    compileOnly localGroovy()
+}
+
+dependencies {
+    compileOnly 'com.android.tools.build:gradle:3.6.3'
+    compileOnly "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    implementation "zy.nav:doc:$apiVersion"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+uploadArchives {
+
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///${project.rootDir}/maven")
+            pom.groupId = 'zy.nav' // 组名
+            pom.artifactId = 'register' // 插件名
+            pom.version = "$apiVersion" // 版本号
+        }
+    }
+}

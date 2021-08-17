@@ -1,0 +1,6 @@
+[
+  {
+    "route": "",
+    "interceptor": "zy.example.appa.SubInterceptor"
+  }
+]
