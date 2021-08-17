@@ -1,6 +1,5 @@
 package zy.nav.compiler;
 
-import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.JavaFile;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
@@ -28,7 +26,6 @@ import zy.nav.annotation.Intercept;
 import zy.nav.doc.InterceptorDoc;
 import zy.nav.doc.NavDoc;
 
-@AutoService(Processor.class)
 public class InterceptorProcessor extends BaseProcessor {
 
     private static final String INTERFACE_INTERCEPTOR_REGISTER = "InterceptorRegister";

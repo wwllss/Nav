@@ -2,7 +2,6 @@ package zy.nav.compiler.arg;
 
 import static javax.lang.model.element.ElementKind.CLASS;
 
-import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.JavaFile;
@@ -19,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
@@ -37,7 +35,6 @@ import zy.nav.doc.ArgDoc;
 import zy.nav.doc.ArgFieldDoc;
 import zy.nav.doc.NavDoc;
 
-@AutoService(Processor.class)
 public class ArgProcessor extends BaseProcessor {
 
     private static final String INTERFACE_ARGS_INJECTOR = "ArgsInjector";

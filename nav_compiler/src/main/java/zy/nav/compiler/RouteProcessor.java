@@ -1,6 +1,5 @@
 package zy.nav.compiler;
 
-import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -20,7 +19,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
@@ -31,7 +29,6 @@ import zy.nav.annotation.Route;
 import zy.nav.doc.NavDoc;
 import zy.nav.doc.RouteDoc;
 
-@AutoService(Processor.class)
 public class RouteProcessor extends BaseProcessor {
 
     private static final String INTERFACE_ACTIVITY_REGISTER = "ActivityRegister";
