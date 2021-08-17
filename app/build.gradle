@@ -6,6 +6,7 @@ apply plugin: 'zy.nav.register'
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "zy.nav.example"
         minSdkVersion 16
