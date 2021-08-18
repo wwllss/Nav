@@ -98,8 +98,11 @@ public class NavDoc {
                     globeInterceptor.add(interceptor.getInterceptor());
                     continue;
                 }
-                fillInterceptor(activityMap, route, interceptor);
-                fillInterceptor(fragmentMap, route, interceptor);
+                if (fragmentMap.containsKey(route)) {
+                    fillInterceptor(fragmentMap, route, interceptor);
+                } else {
+                    fillInterceptor(activityMap, route, interceptor);
+                }
             }
         }
         if (!globeInterceptor.isEmpty()) {
@@ -110,12 +113,11 @@ public class NavDoc {
     }
 
     private static void writeRoute(Map<String, RouteDoc> map, String fileName) {
-        if (map.isEmpty()) {
-            return;
-        }
         List<RouteDoc> routeList = new LinkedList<>();
-        for (Map.Entry<String, RouteDoc> entry : map.entrySet()) {
-            routeList.add(entry.getValue());
+        if (!map.isEmpty()) {
+            for (Map.Entry<String, RouteDoc> entry : map.entrySet()) {
+                routeList.add(entry.getValue());
+            }
         }
         doc(routeList, fileName);
     }

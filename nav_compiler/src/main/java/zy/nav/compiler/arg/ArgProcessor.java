@@ -305,14 +305,20 @@ public class ArgProcessor extends BaseProcessor {
         }
 
         private String[] findRoute(TypeElement key) {
-            Route route = key.getAnnotation(Route.class);
-            if (route != null) {
-                return route.value();
-            }
-            if (!isActivity(key) && isFragment(key)) {
-                return null;
-            }
-            return findRoute((TypeElement) ((DeclaredType) key.getSuperclass()).asElement());
+            do {
+                Route route = key.getAnnotation(Route.class);
+                if (route != null) {
+                    return route.value();
+                }
+                if (!isActivity(key) && isFragment(key)) {
+                    return null;
+                }
+                TypeMirror type = key.getSuperclass();
+                if (type.getKind() == TypeKind.NONE) {
+                    return null;
+                }
+                key = (TypeElement) ((DeclaredType) type).asElement();
+            } while (true);
         }
 
     }
