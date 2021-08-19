@@ -12,14 +12,14 @@ final class InterceptorManager {
 
     private static final Map<String, List<Interceptor>> MAP = new LinkedHashMap<>();
 
-    static List<Interceptor> getGlobalInterceptor(String token) {
-        List<Interceptor> interceptorList = MAP.get(token);
+    static List<Interceptor> getGlobalInterceptor(String route) {
+        List<Interceptor> interceptorList = MAP.get(route);
         if (!Utils.isEmpty(interceptorList)) {
             return interceptorList;
         } else {
             interceptorList = new LinkedList<>();
         }
-        Map<Integer, String> map = NavRegistry.getInterceptorMap(token);
+        Map<Integer, String> map = NavRegistry.getInterceptorMap(route);
         if (map == null || map.isEmpty()) {
             return interceptorList;
         }
@@ -42,7 +42,7 @@ final class InterceptorManager {
                 throw new RuntimeException(e);
             }
         }
-        MAP.put(token, interceptorList);
+        MAP.put(route, interceptorList);
         return interceptorList;
     }
 

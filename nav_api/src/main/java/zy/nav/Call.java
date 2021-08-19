@@ -29,12 +29,12 @@ final class Call {
         if (!Utils.isEmpty(interceptorList)) {
             list.addAll(interceptorList);
         }
-        List<Interceptor> globalInterceptor = InterceptorManager.getGlobalInterceptor(Utils.getPath(request.url()));
+        List<Interceptor> globalInterceptor = InterceptorManager.getGlobalInterceptor("");
         if (!Utils.isEmpty(globalInterceptor)) {
             list.addAll(globalInterceptor);
         }
         //real global interceptor
-        globalInterceptor = InterceptorManager.getGlobalInterceptor("");
+        globalInterceptor = InterceptorManager.getGlobalInterceptor(Utils.getPath(request.url()));
         if (!Utils.isEmpty(globalInterceptor)) {
             list.addAll(globalInterceptor);
         }
