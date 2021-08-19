@@ -7,7 +7,7 @@ dependencies {
 }
 
 dependencies {
-    compileOnly 'com.android.tools.build:gradle:3.6.3'
+    compileOnly 'com.android.tools.build:gradle:4.2.2'
     compileOnly "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     implementation "zy.nav:doc:$apiVersion"
 }
