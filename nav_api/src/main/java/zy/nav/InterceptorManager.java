@@ -12,7 +12,7 @@ final class InterceptorManager {
 
     private static final Map<String, List<Interceptor>> MAP = new LinkedHashMap<>();
 
-    static List<Interceptor> getGlobalInterceptor(String route) {
+    static List<Interceptor> getInterceptorList(String route) {
         List<Interceptor> interceptorList = MAP.get(route);
         if (!Utils.isEmpty(interceptorList)) {
             return interceptorList;

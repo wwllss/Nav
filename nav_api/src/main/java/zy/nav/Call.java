@@ -29,14 +29,17 @@ final class Call {
         if (!Utils.isEmpty(interceptorList)) {
             list.addAll(interceptorList);
         }
-        List<Interceptor> globalInterceptor = InterceptorManager.getGlobalInterceptor("");
+        List<Interceptor> globalInterceptor = InterceptorManager.getInterceptorList("");
         if (!Utils.isEmpty(globalInterceptor)) {
             list.addAll(globalInterceptor);
         }
         //real global interceptor
-        globalInterceptor = InterceptorManager.getGlobalInterceptor(Utils.getPath(request.url()));
-        if (!Utils.isEmpty(globalInterceptor)) {
-            list.addAll(globalInterceptor);
+        String path = Utils.getPath(request.url());
+        if (!Utils.isEmpty(path)) {
+            globalInterceptor = InterceptorManager.getInterceptorList(path);
+            if (!Utils.isEmpty(globalInterceptor)) {
+                list.addAll(globalInterceptor);
+            }
         }
         list.add(new BridgeInterceptor());
         list.add(new SystemFindInterceptor());
