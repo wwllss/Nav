@@ -26,20 +26,20 @@ final class Call {
     final Response call() {
         List<Interceptor> list = new ArrayList<>();
         list.add(retryAndInitiateInterceptor);
+        List<Interceptor> interceptorList = InterceptorManager.getInterceptorList("");
         if (!Utils.isEmpty(interceptorList)) {
             list.addAll(interceptorList);
-        }
-        List<Interceptor> globalInterceptor = InterceptorManager.getInterceptorList("");
-        if (!Utils.isEmpty(globalInterceptor)) {
-            list.addAll(globalInterceptor);
         }
         //real global interceptor
         String path = Utils.getPath(request.url());
         if (!Utils.isEmpty(path)) {
-            globalInterceptor = InterceptorManager.getInterceptorList(path);
-            if (!Utils.isEmpty(globalInterceptor)) {
-                list.addAll(globalInterceptor);
+            interceptorList = InterceptorManager.getInterceptorList(path);
+            if (!Utils.isEmpty(interceptorList)) {
+                list.addAll(interceptorList);
             }
+        }
+        if (!Utils.isEmpty(this.interceptorList)) {
+            list.addAll(this.interceptorList);
         }
         list.add(new BridgeInterceptor());
         list.add(new SystemFindInterceptor());
