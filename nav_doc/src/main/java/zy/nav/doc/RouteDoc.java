@@ -10,7 +10,7 @@ public class RouteDoc {
 
     private String comment;
 
-    private List<ArgDoc> argList;
+    private List<ArgFieldDoc> argList;
 
     private List<String> interceptorList;
 
@@ -38,11 +38,11 @@ public class RouteDoc {
         this.comment = comment;
     }
 
-    public List<ArgDoc> getArgList() {
+    public List<ArgFieldDoc> getArgList() {
         return argList;
     }
 
-    public void setArgList(List<ArgDoc> argList) {
+    public void setArgList(List<ArgFieldDoc> argList) {
         this.argList = argList;
     }
 

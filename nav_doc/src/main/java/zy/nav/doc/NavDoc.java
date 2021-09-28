@@ -123,16 +123,16 @@ public class NavDoc {
     }
 
     private static void fillArg(RouteDoc route, ArgDoc arg) {
-        if (route == null || arg == null) {
+        if (route == null || arg == null || isEmpty(arg.getArgList())) {
             return;
         }
-        List<ArgDoc> temp = route.getArgList();
+        List<ArgFieldDoc> temp = route.getArgList();
         if (temp == null) {
             temp = new LinkedList<>();
             route.setArgList(temp);
         }
         arg.setRoute(null);
-        temp.add(arg);
+        temp.addAll(arg.getArgList());
     }
 
     private static void fillInterceptor(Map<String, RouteDoc> map, String route, InterceptorDoc interceptor) {
