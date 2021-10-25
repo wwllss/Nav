@@ -6,17 +6,13 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeSpec;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import java.util.Set;
 
 import javax.annotation.processing.RoundEnvironment;
@@ -121,27 +117,6 @@ public class RouteProcessor extends BaseProcessor {
             }
             NavDoc.doc(docList, docDir + "/nav/" + paramName + "_" + originalModuleName + ".json");
             return builder.build();
-        }
-
-        @SuppressWarnings("all")
-        private void createDoc(Properties properties) {
-            if (properties == null) {
-                properties = new Properties();
-            }
-            try {
-                File dir = new File(docDir + "/nav");
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-                File file = new File(dir, "activity_" + originalModuleName + ".properties");
-                try (Writer writer = new FileWriter(file)) {
-                    properties.store(writer, "Generated file. Do not modify!");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 
