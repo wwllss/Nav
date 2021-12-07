@@ -2,6 +2,7 @@ package zy.nav;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -20,6 +21,12 @@ interface Initiator {
         static Initiator from(Context context) {
             if (context instanceof Activity) {
                 return from((Activity) context);
+            }
+            if (context instanceof ContextWrapper) {
+                Context baseContext = ((ContextWrapper) context).getBaseContext();
+                if (baseContext instanceof Activity) {
+                    return from((Activity) baseContext);
+                }
             }
             return new ContextInitiator(context);
         }
