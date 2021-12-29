@@ -10,10 +10,10 @@ import zy.nav.TestConstants
  */
 class TestNavActivity1Interceptor : Interceptor {
 
-    override fun intercept(chain: Interceptor.Chain?): Response {
+    override fun intercept(chain: Interceptor.Chain?): Response? {
         val request = chain?.request()
         Assert.assertEquals(request?.url(), TestConstants.url(TestConstants.PATH_TEST_ACTIVITY_1))
-        return chain?.process(request)!!
+        return chain?.process(request)
     }
 
 }

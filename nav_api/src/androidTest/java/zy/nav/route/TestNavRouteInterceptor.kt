@@ -11,7 +11,7 @@ import zy.nav.TestConstants
  */
 class TestNavRouteInterceptor : Interceptor {
 
-    override fun intercept(chain: Interceptor.Chain?): Response {
+    override fun intercept(chain: Interceptor.Chain?): Response? {
         val request = chain?.request()
         request?.addFlag(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val urlArr = arrayOf(
@@ -20,7 +20,7 @@ class TestNavRouteInterceptor : Interceptor {
             TestConstants.url(TestConstants.PATH_TEST_FRAGMENT_1)
         )
         Assert.assertTrue(urlArr.contains(request?.url()))
-        return chain?.process(request)!!
+        return chain?.process(request)
     }
 
 }
