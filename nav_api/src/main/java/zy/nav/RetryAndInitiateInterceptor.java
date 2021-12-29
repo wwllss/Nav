@@ -25,7 +25,7 @@ class RetryAndInitiateInterceptor implements Interceptor {
         Request request = chain.request();
         String url = request.url();
         Utils.requireUrlNotEmpty(url);
-        if (++count > MAX_RETRY_COUNT + 1) {
+        if (count++ > MAX_RETRY_COUNT) {
             throw new NavException("retry count is "
                     + MAX_RETRY_COUNT + "time,And it's exhausted.");
         }
