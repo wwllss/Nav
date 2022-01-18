@@ -1,6 +1,6 @@
 package zy.nav.doc;
 
-public class ServiceImplDoc {
+public class ServiceImplDoc implements Comparable<ServiceImplDoc> {
 
     private String token;
 
@@ -30,5 +30,11 @@ public class ServiceImplDoc {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+
+    @Override
+    public int compareTo(ServiceImplDoc o) {
+        return token.compareTo(o.token);
     }
 }

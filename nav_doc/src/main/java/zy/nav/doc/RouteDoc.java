@@ -2,7 +2,7 @@ package zy.nav.doc;
 
 import java.util.List;
 
-public class RouteDoc {
+public class RouteDoc implements Comparable<RouteDoc> {
 
     private String route;
 
@@ -52,5 +52,10 @@ public class RouteDoc {
 
     public void setInterceptorList(List<String> interceptorList) {
         this.interceptorList = interceptorList;
+    }
+
+    @Override
+    public int compareTo(RouteDoc o) {
+        return route.compareTo(o.route);
     }
 }

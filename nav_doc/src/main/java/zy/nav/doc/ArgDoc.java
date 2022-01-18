@@ -2,7 +2,7 @@ package zy.nav.doc;
 
 import java.util.List;
 
-public class ArgDoc {
+public class ArgDoc implements Comparable<ArgDoc> {
 
     private String route;
 
@@ -22,5 +22,10 @@ public class ArgDoc {
 
     public void setArgList(List<ArgFieldDoc> argList) {
         this.argList = argList;
+    }
+
+    @Override
+    public int compareTo(ArgDoc o) {
+        return route.compareTo(o.route);
     }
 }

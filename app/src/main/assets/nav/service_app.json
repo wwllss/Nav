@@ -1,11 +1,10 @@
 [
   {
-    "service": "zy.example.app_service.TestService",
+    "service": "zy.example.app_service.AppMainModuleService",
     "implList": [
       {
         "token": "",
-        "implName": "zy.nav.example.TestServiceImpl",
-        "comment": " created by zhangyuan on 2020/4/15\n"
+        "implName": "zy.nav.example.AppMainModuleServiceImpl"
       }
     ]
   },
@@ -16,15 +15,6 @@
         "token": "2",
         "implName": "zy.nav.example.TestClassServiceImpl2",
         "comment": " created by zhangyuan on 2020/4/15\n"
-      }
-    ]
-  },
-  {
-    "service": "zy.nav.JsonMarshaller",
-    "implList": [
-      {
-        "token": "",
-        "implName": "zy.nav.example.GsonMarshaller"
       }
     ]
   },
@@ -51,6 +41,16 @@
     "service": "zy.example.app_service.TestService",
     "implList": [
       {
+        "token": "",
+        "implName": "zy.nav.example.TestServiceImpl",
+        "comment": " created by zhangyuan on 2020/4/15\n"
+      }
+    ]
+  },
+  {
+    "service": "zy.example.app_service.TestService",
+    "implList": [
+      {
         "token": "2",
         "implName": "zy.nav.example.TestServiceImpl2",
         "comment": " created by zhangyuan on 2020/4/15\n"
@@ -58,11 +58,11 @@
     ]
   },
   {
-    "service": "zy.example.app_service.AppMainModuleService",
+    "service": "zy.nav.JsonMarshaller",
     "implList": [
       {
         "token": "",
-        "implName": "zy.nav.example.AppMainModuleServiceImpl"
+        "implName": "zy.nav.example.GsonMarshaller"
       }
     ]
   }

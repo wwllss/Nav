@@ -1,10 +1,9 @@
 [
   {
-    "route": "/appa/module",
+    "route": "/app/a/fragment/main",
     "argList": [
       {
-        "paramName": "str",
-        "fieldName": "moduleAppName"
+        "paramName": "msgList"
       }
     ]
   },
@@ -18,10 +17,11 @@
     ]
   },
   {
-    "route": "/app/a/fragment/main",
+    "route": "/appa/module",
     "argList": [
       {
-        "paramName": "msgList"
+        "paramName": "str",
+        "fieldName": "moduleAppName"
       }
     ]
   }

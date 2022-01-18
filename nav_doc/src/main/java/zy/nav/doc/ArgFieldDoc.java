@@ -1,6 +1,6 @@
 package zy.nav.doc;
 
-public class ArgFieldDoc {
+public class ArgFieldDoc implements Comparable<ArgFieldDoc> {
 
     private String paramName;
 
@@ -20,5 +20,10 @@ public class ArgFieldDoc {
 
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
+    }
+
+    @Override
+    public int compareTo(ArgFieldDoc o) {
+        return paramName.compareTo(o.paramName);
     }
 }

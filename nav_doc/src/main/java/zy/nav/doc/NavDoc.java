@@ -8,8 +8,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,12 +29,31 @@ public class NavDoc {
             parentFile.mkdirs();
         }
         try (FileWriter fw = new FileWriter(file)) {
-            fw.write(gson.toJson(object));
+            fw.write(gson.toJson(sort(object)));
             fw.flush();
             fw.close();
-        } catch (IOException e) {
+        } catch (IOException | IllegalAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    private static Object sort(Object object) throws IllegalAccessException {
+        Field[] fields = object.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            Object o = field.get(object);
+            sortIfList(o);
+        }
+        sortIfList(object);
+        return object;
+    }
+
+    @SuppressWarnings("all")
+    private static void sortIfList(Object o) {
+        if (!(o instanceof List)) {
+            return;
+        }
+        Collections.sort((List<Comparable>) o);
     }
 
     @SuppressWarnings("all")

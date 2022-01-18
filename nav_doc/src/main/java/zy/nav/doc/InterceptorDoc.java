@@ -1,6 +1,6 @@
 package zy.nav.doc;
 
-public class InterceptorDoc {
+public class InterceptorDoc implements Comparable<InterceptorDoc> {
 
     private String route;
 
@@ -20,5 +20,10 @@ public class InterceptorDoc {
 
     public void setInterceptor(String interceptor) {
         this.interceptor = interceptor;
+    }
+
+    @Override
+    public int compareTo(InterceptorDoc o) {
+        return route.compareTo(o.route);
     }
 }

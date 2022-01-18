@@ -2,7 +2,7 @@ package zy.nav.doc;
 
 import java.util.List;
 
-public class ServiceDoc {
+public class ServiceDoc implements Comparable<ServiceDoc> {
 
     private String service;
 
@@ -32,5 +32,10 @@ public class ServiceDoc {
 
     public void setImplList(List<ServiceImplDoc> implList) {
         this.implList = implList;
+    }
+
+    @Override
+    public int compareTo(ServiceDoc o) {
+        return service.compareTo(o.service);
     }
 }
