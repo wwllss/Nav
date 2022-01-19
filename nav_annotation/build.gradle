@@ -12,6 +12,15 @@ java {
 
 uploadArchives {
 
+    task sourceJar(type: Jar) {
+        archiveClassifier.set("sources")
+        from sourceSets.main.java.srcDirs
+    }
+
+    artifacts {
+        archives sourceJar
+    }
+
     repositories {
         mavenDeployer {
             repository(url: "file:///${project.rootDir}/maven")
