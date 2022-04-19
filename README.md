@@ -9,7 +9,7 @@ dependencies {
 }
 
 //所有 module 配置
-apply plugin: 'zy.nav.register'
+apply plugin: 'zy.nav'
 ```
 ## 路由功能
 ### 基本使用

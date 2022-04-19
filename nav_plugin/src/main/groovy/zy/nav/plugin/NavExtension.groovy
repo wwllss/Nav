@@ -1,4 +1,4 @@
-package zy.nav.register
+package zy.nav.plugin
 
 class NavExtension {
 

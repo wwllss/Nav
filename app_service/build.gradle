@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'zy.nav.register'
+apply plugin: 'zy.nav'
 //apply from: "$rootDir/dep.gradle"
 
 android {

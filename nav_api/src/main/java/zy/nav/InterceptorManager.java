@@ -19,7 +19,7 @@ final class InterceptorManager {
         } else {
             interceptorList = new LinkedList<>();
         }
-        Map<Integer, String> map = NavRegistry.getInterceptorMap(route);
+        Map<Integer, String> map = NavRegistry.getInterceptor(route);
         if (map == null || map.isEmpty()) {
             return interceptorList;
         }

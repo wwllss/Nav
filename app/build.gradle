@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'zy.nav.register'
+apply plugin: 'zy.nav'
 //apply from: "$rootDir/dep.gradle"
 
 android {

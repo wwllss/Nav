@@ -1,4 +1,4 @@
-package zy.nav.register
+package zy.nav.plugin
 
 import org.apache.commons.io.IOUtils
 import org.objectweb.asm.*

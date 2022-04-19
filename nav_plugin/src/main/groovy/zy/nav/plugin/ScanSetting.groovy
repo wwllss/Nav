@@ -1,8 +1,8 @@
-package zy.nav.register
+package zy.nav.plugin
 
 class ScanSetting {
 
-    static final String PLUGIN_NAME = "zy.nav.register"
+    static final String PLUGIN_NAME = "zy.nav"
 
     /**
      * The register code is generated into this class

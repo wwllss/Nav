@@ -1,4 +1,4 @@
-package zy.nav.register
+package zy.nav.plugin
 
 import com.android.build.api.transform.*
 import com.android.build.gradle.internal.pipeline.TransformManager

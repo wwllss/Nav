@@ -12,8 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/register/Nav.register.iml" filepath="$PROJECT_DIR$/.idea/modules/register/Nav.register.iml" />
     </modules>
   </component>
 </project>

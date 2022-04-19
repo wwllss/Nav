@@ -9,11 +9,16 @@ import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 final class Utils {
 
     static boolean isEmpty(Collection<?> collection) {
         return collection == null || collection.isEmpty();
+    }
+
+    static boolean isEmpty(Map<?, ?> map) {
+        return map == null || map.isEmpty();
     }
 
     static boolean isEmpty(String str) {

@@ -2,7 +2,6 @@ package zy.nav;
 
 import android.text.TextUtils;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -69,45 +68,58 @@ final class NavRegistry {
         return ACTIVITY.get(key);
     }
 
-    static void findActivity(Finder<String> finder) {
-        for (Map.Entry<String, String> entry : ACTIVITY.entrySet()) {
-            finder.find(entry.getKey(), entry.getValue());
-        }
+    static Map<String, String> findActivity(Finder finder) {
+        return find(ACTIVITY, finder);
     }
 
     static String getFragment(final String key) {
         return FRAGMENT.get(key);
     }
 
-    static void findFragment(Finder<String> finder) {
-        for (Map.Entry<String, String> entry : FRAGMENT.entrySet()) {
-            finder.find(entry.getKey(), entry.getValue());
-        }
+    static Map<String, String> findFragment(Finder finder) {
+        return find(FRAGMENT, finder);
     }
 
     static String getService(final String key) {
         return SERVICE.get(key);
     }
 
-    static void findService(Finder<String> finder) {
-        for (Map.Entry<String, String> entry : SERVICE.entrySet()) {
-            finder.find(entry.getKey(), entry.getValue());
+    static Map<String, String> findService(Finder finder) {
+        return find(ACTIVITY, finder);
+    }
+
+    static Map<Integer, String> getInterceptor(final String key) {
+        Map<Integer, String> map = INTERCEPTOR.get(key);
+        return map == null ? null : new LinkedHashMap<>(map);
+    }
+
+    static Map<String, Map<Integer, String>> findInterceptor(Finder finder) {
+        return find(INTERCEPTOR, finder);
+    }
+
+    @SuppressWarnings("all")
+    private static <T> Map<String, T> find(Map<String, T> source, Finder finder) {
+        if (Utils.isEmpty(source)) {
+            return new LinkedHashMap<>();
         }
-    }
-
-    static Map<Integer, String> getInterceptorMap(final String key) {
-        return INTERCEPTOR.get(key);
-    }
-
-    static void findInterceptorMap(Finder<Map<Integer, String>> finder) {
-        for (Map.Entry<String, Map<Integer, String>> entry : INTERCEPTOR.entrySet()) {
-            finder.find(entry.getKey(), new HashMap<>(entry.getValue()));
+        Map<String, T> map = new LinkedHashMap<>();
+        for (Map.Entry<String, T> entry : source.entrySet()) {
+            String key = entry.getKey();
+            if (!finder.find(key)) {
+                continue;
+            }
+            T value = entry.getValue();
+            if (value instanceof Map) {
+                value = (T) new LinkedHashMap((Map) value);
+            }
+            map.put(key, value);
         }
+        return map;
     }
 
-    interface Finder<T> {
+    interface Finder {
 
-        void find(String key, T value);
+        boolean find(String key);
 
     }
 

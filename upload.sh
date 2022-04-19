@@ -5,4 +5,4 @@
 ./gradlew :nav_test:uploadArchives
 ./gradlew :nav_doc:uploadArchives
 ./gradlew :nav_compiler:uploadArchives
-./gradlew :register:uploadArchives
+./gradlew :nav_plugin:uploadArchives

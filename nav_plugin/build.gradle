@@ -23,7 +23,7 @@ uploadArchives {
         mavenDeployer {
             repository(url: "file:///${project.rootDir}/maven")
             pom.groupId = 'zy.nav' // 组名
-            pom.artifactId = 'register' // 插件名
+            pom.artifactId = 'plugin' // 插件名
             pom.version = "$apiVersion" // 版本号
         }
     }

@@ -1,4 +1,4 @@
-package zy.nav.register
+package zy.nav.plugin
 
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
