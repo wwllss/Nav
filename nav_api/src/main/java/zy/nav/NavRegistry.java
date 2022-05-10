@@ -85,7 +85,7 @@ final class NavRegistry {
     }
 
     static Map<String, String> findService(Finder finder) {
-        return find(ACTIVITY, finder);
+        return find(SERVICE, finder);
     }
 
     static Map<Integer, String> getInterceptor(final String key) {
