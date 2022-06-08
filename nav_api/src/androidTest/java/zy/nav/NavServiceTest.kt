@@ -42,6 +42,12 @@ class NavServiceTest : NavBaseTest() {
             Assert.assertNotNull(this)
             Assert.assertTrue(this is TestServiceImpl3)
         }
+        Nav.findServices(TestService::class.java).apply {
+            Assert.assertEquals(2, this.size)
+        }
+        Nav.findServices(AbstractTestService::class.java, null, "2", Person.testData()).apply {
+            Assert.assertEquals(1, this.size)
+        }
     }
 
 }

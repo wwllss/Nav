@@ -40,6 +40,10 @@ final class NavDelegate {
         return ServiceManager.getService(serviceClass, token, params);
     }
 
+    static <T> List<T> findServices(Class<T> serviceClass, Object... params) {
+        return ServiceManager.findServices(serviceClass, params);
+    }
+
     static void register(ActivityRegister register) {
         NavRegistry.register(register);
     }

@@ -7,6 +7,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 final class ServiceManager {
 
@@ -14,6 +15,15 @@ final class ServiceManager {
 
     static <T> T getService(Class<T> serviceClass, String token, Object... params) {
         return newInstance(NavRegistry.getService(key(serviceClass.getName(), token)), params);
+    }
+
+    static <T> List<T> findServices(Class<T> serviceClass, Object... params) {
+        Map<String, String> keyMap = NavRegistry.findServices(key -> key.startsWith(serviceClass.getName()));
+        List<T> services = new ArrayList<>();
+        for (Map.Entry<String, String> entry : keyMap.entrySet()) {
+            services.add(newInstance(entry.getValue(), params));
+        }
+        return services;
     }
 
     @SuppressWarnings("unchecked")

@@ -68,7 +68,7 @@ final class NavRegistry {
         return ACTIVITY.get(key);
     }
 
-    static Map<String, String> findActivity(Finder finder) {
+    static Map<String, String> findActivities(Finder finder) {
         return find(ACTIVITY, finder);
     }
 
@@ -76,7 +76,7 @@ final class NavRegistry {
         return FRAGMENT.get(key);
     }
 
-    static Map<String, String> findFragment(Finder finder) {
+    static Map<String, String> findFragments(Finder finder) {
         return find(FRAGMENT, finder);
     }
 
@@ -84,7 +84,7 @@ final class NavRegistry {
         return SERVICE.get(key);
     }
 
-    static Map<String, String> findService(Finder finder) {
+    static Map<String, String> findServices(Finder finder) {
         return find(SERVICE, finder);
     }
 
@@ -93,7 +93,7 @@ final class NavRegistry {
         return map == null ? null : new LinkedHashMap<>(map);
     }
 
-    static Map<String, Map<Integer, String>> findInterceptor(Finder finder) {
+    static Map<String, Map<Integer, String>> findInterceptors(Finder finder) {
         return find(INTERCEPTOR, finder);
     }
 

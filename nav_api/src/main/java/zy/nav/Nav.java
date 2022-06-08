@@ -11,6 +11,8 @@ import androidx.annotation.UiThread;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
+
 @UiThread
 public final class Nav {
 
@@ -72,6 +74,10 @@ public final class Nav {
     @Nullable
     public static <T> T getService(Class<T> serviceClass, String token, Object... params) {
         return NavDelegate.getService(serviceClass, token, params);
+    }
+
+    public static <T> List<T> findServices(Class<T> serviceClass, Object... params) {
+        return NavDelegate.findServices(serviceClass, params);
     }
 
     public void to(String url) {
