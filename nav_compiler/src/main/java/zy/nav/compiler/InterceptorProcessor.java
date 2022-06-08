@@ -1,7 +1,6 @@
 package zy.nav.compiler;
 
 import com.squareup.javapoet.ClassName;
-import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterizedTypeName;
@@ -83,12 +82,10 @@ public class InterceptorProcessor extends BaseProcessor {
             String[] route = element.getAnnotation(Intercept.class).route();
             for (String token : route) {
                 builder.addStatement("interceptorMap = interceptors.get($S)", token);
-                builder.addCode(CodeBlock.builder()
-                        .beginControlFlow("if (interceptorMap == null)")
-                        .addStatement("interceptorMap = new $T<>()", TypeName.get(HashMap.class))
-                        .addStatement("interceptors.put($S, interceptorMap)", token)
-                        .endControlFlow()
-                        .build());
+                builder.beginControlFlow("if (interceptorMap == null)");
+                builder.addStatement("interceptorMap = new $T<>()", TypeName.get(HashMap.class));
+                builder.addStatement("interceptors.put($S, interceptorMap)", token);
+                builder.endControlFlow();
                 int priority = element.getAnnotation(Intercept.class).priority();
                 Name binaryName = elementUtils.getBinaryName(element);
                 builder.addStatement("interceptorMap.put($L, $S)", priority, binaryName/*element.getQualifiedName()*/);

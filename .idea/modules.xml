@@ -4,16 +4,45 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Nav.iml" filepath="$PROJECT_DIR$/.idea/modules/Nav.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Nav.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Nav.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Nav.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Nav.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Nav.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Nav.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Nav.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Nav.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.iml" filepath="$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app_service/Nav.app_service.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/appa/Nav.appa.iml" filepath="$PROJECT_DIR$/.idea/modules/appa/Nav.appa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appa/Nav.appa.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appa/Nav.appa.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appa/Nav.appa.main.iml" filepath="$PROJECT_DIR$/.idea/modules/appa/Nav.appa.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appa/Nav.appa.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appa/Nav.appa.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/appb/Nav.appb.iml" filepath="$PROJECT_DIR$/.idea/modules/appb/Nav.appb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appb/Nav.appb.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appb/Nav.appb.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appb/Nav.appb.main.iml" filepath="$PROJECT_DIR$/.idea/modules/appb/Nav.appb.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appb/Nav.appb.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appb/Nav.appb.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/appk/Nav.appk.iml" filepath="$PROJECT_DIR$/.idea/modules/appk/Nav.appk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appk/Nav.appk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appk/Nav.appk.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appk/Nav.appk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/appk/Nav.appk.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appk/Nav.appk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/appk/Nav.appk.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_annotation/Nav.nav_annotation.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_api/Nav.nav_api.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_compiler/Nav.nav_compiler.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_doc/Nav.nav_doc.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_plugin/Nav.nav_plugin.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/nav_test/Nav.nav_test.unitTest.iml" />
     </modules>
   </component>
 </project>
