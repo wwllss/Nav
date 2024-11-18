@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,RtlEnabled">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +22,9 @@
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".ForResultActivity" />
-        <activity android:name=".RouteProxyActivity">
+        <activity
+            android:name=".RouteProxyActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
