@@ -29,7 +29,7 @@ final class Utils {
         return a != null && a.equals(b);
     }
 
-    static void requireUrlNotEmpty(String url) {
+    static void requireNotEmpty(String url) {
         if (TextUtils.isEmpty(url)) {
             throw new IllegalArgumentException("url is null or empty");
         }
