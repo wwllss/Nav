@@ -15,12 +15,12 @@ final class InterceptorManager {
     static List<Interceptor> getInterceptorList(String route) {
         List<Interceptor> interceptorList = MAP.get(route);
         if (!Utils.isEmpty(interceptorList)) {
-            return interceptorList;
+            return new LinkedList<>(interceptorList);
         } else {
             interceptorList = new LinkedList<>();
         }
         Map<Integer, String> map = NavRegistry.getInterceptor(route);
-        if (map == null || map.isEmpty()) {
+        if (Utils.isEmpty(map)) {
             return interceptorList;
         }
         List<Map.Entry<Integer, String>> entryList =
@@ -43,7 +43,7 @@ final class InterceptorManager {
             }
         }
         MAP.put(route, interceptorList);
-        return interceptorList;
+        return new LinkedList<>(interceptorList);
     }
 
 }
