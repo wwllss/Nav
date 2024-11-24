@@ -99,10 +99,10 @@ final class NavRegistry {
 
     @SuppressWarnings("all")
     private static <T> Map<String, T> find(Map<String, T> source, Finder finder) {
-        if (Utils.isEmpty(source)) {
-            return new LinkedHashMap<>();
-        }
         Map<String, T> map = new LinkedHashMap<>();
+        if (Utils.isEmpty(source)) {
+            return map;
+        }
         for (Map.Entry<String, T> entry : source.entrySet()) {
             String key = entry.getKey();
             if (!finder.find(key)) {
