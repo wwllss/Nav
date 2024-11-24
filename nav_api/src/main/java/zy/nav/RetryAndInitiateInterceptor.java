@@ -1,5 +1,6 @@
 package zy.nav;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 
@@ -20,6 +21,7 @@ class RetryAndInitiateInterceptor implements Interceptor {
         this.count = 0;
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public Response intercept(Chain chain) throws NavException {
         Request request = chain.request();
