@@ -72,7 +72,7 @@ public final class Nav {
     }
 
     @Nullable
-    public static <T> T getService(Class<T> serviceClass, String token, Object... params) {
+    public static <T> T getService(@NonNull Class<T> serviceClass, String token, Object... params) {
         return NavDelegate.getService(serviceClass, token, params);
     }
 
