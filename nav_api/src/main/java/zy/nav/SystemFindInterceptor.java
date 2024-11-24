@@ -1,5 +1,6 @@
 package zy.nav;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,9 +16,9 @@ class SystemFindInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws NavException {
         Request request = chain.request();
+        Response response = chain.process(request);
         final PackageManager manager = request.context().getPackageManager();
         final String packageName = request.context().getPackageName();
-        Response response = chain.process(request);
         if (NavAction.ACTIVITY == request.action()
                 && !response.success()) {
             Intent intent = new Intent();
@@ -26,7 +27,7 @@ class SystemFindInterceptor implements Interceptor {
             intent.addCategory(Intent.CATEGORY_DEFAULT);
             String url = request.url();
             intent.setData(Uri.parse(url));
-            ComponentName componentName = intent.resolveActivity(manager);
+            @SuppressLint("QueryPermissionsNeeded") ComponentName componentName = intent.resolveActivity(manager);
             if (componentName != null) {
                 response.target(componentName.getClassName());
             }
